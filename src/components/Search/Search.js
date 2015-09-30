@@ -10,7 +10,7 @@ export default class Search extends Component {
     handleSubmit = (e) => {
         const { submitSearch } = this.props;
         e.preventDefault();
-        submitSearch(encodeURIComponent(this.refs.searchInput.value));
+        submitSearch(encodeURIComponent(this.refs.searchInput.value.trim()));
     }
 
     render() {
