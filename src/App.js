@@ -6,14 +6,15 @@ import * as reducers from 'reducers';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 
-import { Router, Route, history } from 'react-router';
-
+import { Router, Route } from 'react-router';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { Items, SimpleComponent } from './containers/';
 
 const logger = createLogger({collapsed: true});
 const reducersApp = combineReducers(reducers);
-const createStoreWithMiddleware = applyMiddleware(logger, thunkMiddleware)(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunkMiddleware, logger)(createStore);
 const store = createStoreWithMiddleware(reducersApp);
+const history = createBrowserHistory();
 
 export default class App extends Component {
   render() {
