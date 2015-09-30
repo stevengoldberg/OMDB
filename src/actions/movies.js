@@ -12,7 +12,11 @@ export function requestMovie(title) {
 		$.ajax(`${config.omdbURI}t=${title}`, {
 			method: 'GET',
 			success: (data, status, xhr) => {
-				dispatch(movieSuccess(data));
+				if(data.Error === undefined) {
+					dispatch(movieSuccess(data));
+				} else {
+					dispatch(movieError(data.Error));
+				}
 			},
 
 			error: (xhr, status, error) => {
