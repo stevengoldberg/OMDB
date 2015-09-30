@@ -8,7 +8,7 @@ import * as movieActions from '../../actions/movies.js';
 import '../../styles/main.scss';
 
 // Application components
-import { Header, Footer, Search } from '../../components';
+import { Header, Footer, Search, TitleList } from '../../components';
 
 @connect(state => state.library)
 export default class MovieList extends Component {
@@ -41,6 +41,10 @@ export default class MovieList extends Component {
                         <div className="col-sm-6 col-ls-6">
                             <Search 
                                 submitSearch={this.actions.submitSearch}
+                            />
+                            <TitleList 
+                                titles={this.props.titles}
+                                searchString={this.props.searchString}
                             />
                         </div>
                         <div className="col-sm-6 col-ls-6">
