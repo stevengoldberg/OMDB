@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import DocumentMeta from 'react-document-meta';
+import * as movieActions from '../../actions/movies.js';
 
 // Global styles
 import '../../styles/main.scss';
@@ -8,10 +10,14 @@ import '../../styles/main.scss';
 // Application components
 import { Header, Footer, Search } from '../../components';
 
+@connect(state => state.library)
 export default class MovieList extends Component {
+    constructor(props) {
+        super(props);
+        this.actions = bindActionCreators(movieActions, this.props.dispatch);
+    }
 
     static propTypes = {
-        children: React.PropTypes.object,
     }
 
     render() {
@@ -33,7 +39,9 @@ export default class MovieList extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-6 col-ls-6">
-                            <Search />
+                            <Search 
+                                requestMovie={this.actions.requestMovie}
+                            />
                         </div>
                         <div className="col-sm-6 col-ls-6">
                             Library UI here

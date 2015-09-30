@@ -1,6 +1,6 @@
 import keymirror from 'keymirror';
 
-export const movies = keymirror({
+export const movieActionTypes = keymirror({
 	MOVIE_SUBMITTED: null,
 	MOVIE_ADDED_SUCCESS: null,
 	MOVIE_ADDED_ERROR: null,
