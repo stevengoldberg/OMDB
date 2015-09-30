@@ -10,7 +10,7 @@ export default class TitleList extends Component {
 		(
 			<div className={styles.container}>
 				<h3>Which <span className={styles.title}>{decodeURIComponent(searchString)}</span> did you mean?</h3>
-			{titles.map((title, i) => <Title title={title.Title} key={i} />)}
+			{titles.map((title, i) => <Title title={title} addMovie={this.props.addMovie} key={i} />)}
 			</div>
 		);
 	}

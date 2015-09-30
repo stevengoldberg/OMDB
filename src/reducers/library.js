@@ -37,5 +37,15 @@ export function library(state = initialState, action={}) {
     			formError: true,
     		};
     	},
+
+    	[movieActionTypes.MOVIE_ADDED_SUCCESS](state, action) {
+    		const { data } = action;
+    		const newLibrary = [].concat(state.library, data);
+
+    		return {
+    			...state,
+    			library: newLibrary,
+    		};
+    	},
     });
 }

@@ -46,6 +46,7 @@ export default class MovieList extends Component {
                             <TitleList 
                                 titles={this.props.titles}
                                 searchString={this.props.searchString}
+                                addMovie={this.actions.addMovie}
                             />
                         </div>
                         <div className="col-sm-6 col-ls-6">

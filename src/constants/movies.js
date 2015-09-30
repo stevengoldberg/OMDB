@@ -4,6 +4,7 @@ export const movieActionTypes = keymirror({
 	SEARCH_SUBMITTED: null,
 	SEARCH_SUCCESS: null,
 	SEARCH_ERROR: null,
-	MOVIE_ADDED: null,
-	MOVIE_REMOVED: null,
+	ADD_TITLE_CLICKED: null,
+	MOVIE_ADDED_SUCCESS: null,
+	MOVIE_ADDED_ERROR: null,
 })

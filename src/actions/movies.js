@@ -39,3 +39,44 @@ function searchError(error) {
 		error,
 	};
 }
+
+export function addMovie(data) {
+	const { imdbID, title } = data;
+
+	return dispatch => {
+		dispatch({
+			type: movieActionTypes.ADD_TITLE_CLICKED,
+			data
+		});
+
+		$.ajax(`${config.omdbURI}i=${imdbID}`, {
+			method: 'GET',
+			success: (data, status, xhr) => {
+				if(data.Error === undefined) {
+					dispatch(movieSuccess(data));
+				} else {
+					dispatch(movieError(data.Error));
+				}
+			},
+
+			error: (xhr, status, error) => {
+				dispatch(movieError(error));
+			},
+		});
+
+	}
+}
+
+function movieSuccess(data) {
+	return {
+		type: movieActionTypes.MOVIE_ADDED_SUCCESS,
+		data,
+	};
+}
+
+function movieError(error) {
+	return {
+		type: movieActionTypes.MOVIE_ADDED_ERROR,
+		error,
+	};
+}
