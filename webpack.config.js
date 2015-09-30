@@ -33,6 +33,8 @@ module.exports = {
     modulesDirectories: ['src', 'node_modules']
   },
 
+  devtool: '#source-map',
+
   module: {
     loaders: [{
       test: /bootstrap\/js\//,

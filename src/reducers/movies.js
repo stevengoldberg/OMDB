@@ -2,7 +2,7 @@ const initialState = {
   items: [],
 };
 
-export function items(state = initialState, action) {
+export function movies(state = initialState, action) {
   switch (action.type) {
   case 'ADD':
     return {

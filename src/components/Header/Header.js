@@ -7,7 +7,7 @@ export default class Header extends Component {
   render() {
     return (
       <div className={ `${ styles }` }>
-        Redux easy boilerplate
+        My Movie Library
       </div>
     );
   }
