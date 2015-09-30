@@ -8,7 +8,7 @@ import * as movieActions from '../../actions/movies.js';
 import '../../styles/main.scss';
 
 // Application components
-import { Header, Footer, Search, TitleList } from '../../components';
+import { Header, Search, TitleList, Library } from '../../components';
 
 @connect(state => state.library)
 export default class MovieList extends Component {
@@ -50,11 +50,12 @@ export default class MovieList extends Component {
                             />
                         </div>
                         <div className="col-sm-6 col-ls-6">
-                            Library UI here
+                            <Library 
+                                movies={this.props.library}
+                            />
                         </div>
                     </div>
                 </div>
-                <Footer />
             </section>
         );
     }

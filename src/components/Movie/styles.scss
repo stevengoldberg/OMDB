@@ -1,0 +1,25 @@
+:local(.container) {
+
+}
+
+:local(.posterFrame) {
+	text-align: center;
+	display: inline-block;
+	width: 20%;
+	vertical-align: middle;
+}
+
+:local(.poster) {
+	width: 100%;
+}
+
+:local(.title) {
+	display: block;
+}
+
+:local(.info) {
+	display: inline-block;
+	width: 70%;
+	vertical-align: middle;
+	padding: 5px;
+}

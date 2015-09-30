@@ -4,7 +4,6 @@ import styles from './styles.scss';
 export default class Title extends Component {
 	handleClick = () => {
 		const { addMovie, title } = this.props;
-		console.log(title);
 		addMovie({
 			title: title.Title,
 			imdbID: title.imdbID,
