@@ -1,30 +1,12 @@
+import createReducer from '../util/create-reducer';
+import { movieActions } from '../actions';
+
 const initialState = {
-  items: [],
+    items: [],
 };
 
-export function movies(state = initialState, action) {
-  switch (action.type) {
-  case 'ADD':
-    return {
-      ...state,
-      items: [
-        ...state.items,
-        {
-          text: action.text,
-          numb: state.items.length + 1,
-        },
-      ],
-    };
+export function movies(state = initialState, action={}) {
+    return createReducer(state, action, {
 
-  case 'DELETE':
-    return {
-      ...state,
-      items: [
-        ...state.items.slice(0, state.items.length - 1)
-      ],
-    };
-
-  default:
-    return state;
-  }
+    });
 }

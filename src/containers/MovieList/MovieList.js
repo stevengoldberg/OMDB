@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import DocumentMeta from 'react-document-meta';
-import 'bootstrap-webpack';
 
 // Global styles
-import 'style!../../styles/main.scss';
+import '../../styles/main.scss';
 
 // Application components
-import { Header, Footer } from '../../components';
+import { Header, Footer, Search } from '../../components';
 
 export default class MovieList extends Component {
 
@@ -34,7 +33,7 @@ export default class MovieList extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-6 col-ls-6">
-                            Search UI Here
+                            <Search />
                         </div>
                         <div className="col-sm-6 col-ls-6">
                             Library UI here

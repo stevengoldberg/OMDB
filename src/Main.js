@@ -4,7 +4,7 @@ import DocumentMeta from 'react-document-meta';
 import 'bootstrap-webpack';
 
 // Global styles
-import 'style!./styles/main.scss';
+import './styles/main.scss';
 
 // Application components
 import { Header, Footer } from 'components';

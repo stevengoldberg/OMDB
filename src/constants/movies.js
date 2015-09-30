@@ -1,6 +1,6 @@
-import keyMirror from 'keyMirror';
+import keymirror from 'keymirror';
 
-export default keyMirror({
+export const movies = keymirror({
 	MOVIE_SUBMITTED: null,
 	MOVIE_ADDED_SUCCESS: null,
 	MOVIE_ADDED_ERROR: null,

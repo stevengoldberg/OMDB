@@ -1,3 +1,3 @@
-export default const {
+export const config = {
     dbURI: 'http://www.omdbapi.com/?',
 };

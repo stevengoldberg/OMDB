@@ -37,9 +37,6 @@ module.exports = {
 
   module: {
     loaders: [{
-      test: /bootstrap\/js\//,
-      loader: 'imports?jQuery=jquery'
-    }, {
       test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
       loader: "url?limit=10000&minetype=application/font-woff"
     }, {
@@ -60,7 +57,11 @@ module.exports = {
       exclude: /node_modules/
     }, {
       test: /\.scss$/,
-      loader: "css!postcss-loader!sass"
+      loader: "style!css?modules&importLoaders=1!postcss-loader!sass",
+      exclude: /node_modules/
+    },{
+      test: /bootstrap\/js\//,
+      loader: 'imports?jQuery=jquery'
     }]
   },
   postcss: function() {
