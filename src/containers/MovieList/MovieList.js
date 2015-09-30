@@ -40,7 +40,7 @@ export default class MovieList extends Component {
                     <div className="row">
                         <div className="col-sm-6 col-ls-6">
                             <Search 
-                                requestMovie={this.actions.requestMovie}
+                                submitSearch={this.actions.submitSearch}
                             />
                         </div>
                         <div className="col-sm-6 col-ls-6">

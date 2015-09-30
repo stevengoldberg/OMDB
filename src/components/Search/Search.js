@@ -8,9 +8,9 @@ export default class Search extends Component {
     
     // Handle form submission
     handleSubmit = (e) => {
-        const { requestMovie } = this.props;
+        const { submitSearch } = this.props;
         e.preventDefault();
-        requestMovie(encodeURIComponent(this.refs.searchInput.value));
+        submitSearch(encodeURIComponent(this.refs.searchInput.value));
     }
 
     render() {

@@ -1,9 +1,9 @@
 import keymirror from 'keymirror';
 
 export const movieActionTypes = keymirror({
-	MOVIE_SUBMITTED: null,
-	MOVIE_ADDED_SUCCESS: null,
-	MOVIE_ADDED_ERROR: null,
-	MOVIE_REMOVE_CLICKED: null,
-	MOVIE_REMOVE_SUCCESS: null,	
+	SEARCH_SUBMITTED: null,
+	SEARCH_SUCCESS: null,
+	SEARCH_ERROR: null,
+	MOVIE_ADDED: null,
+	MOVIE_REMOVED: null,
 })

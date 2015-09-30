@@ -2,40 +2,40 @@ import { config } from '../config';
 import { movieActionTypes } from '../constants/movies';
 import $ from 'jquery';
 
-export function requestMovie(title) {
+export function submitSearch(title) {
 	return dispatch => {
 		dispatch({
-			type: movieActionTypes.MOVIE_SUBMITTED,
+			type: movieActionTypes.SEARCH_SUBMITTED,
 			title,
 		});
 
-		$.ajax(`${config.omdbURI}t=${title}`, {
+		$.ajax(`${config.omdbURI}s=${title}`, {
 			method: 'GET',
 			success: (data, status, xhr) => {
 				if(data.Error === undefined) {
-					dispatch(movieSuccess(data));
+					dispatch(searchSuccess(data));
 				} else {
-					dispatch(movieError(data.Error));
+					dispatch(searchError(data.Error));
 				}
 			},
 
 			error: (xhr, status, error) => {
-				dispatch(movieError(error));
+				dispatch(searchError(error));
 			},
 		});
 	}
 }
 
-function movieSuccess(data) {
+function searchSuccess(data) {
 	return {
-		type: movieActionTypes.MOVIE_ADDED_SUCCESS,
+		type: movieActionTypes.SEARCH_SUCCESS,
 		data,
 	};
 }
 
-function movieError(error) {
+function searchError(error) {
 	return {
-		type: movieActionTypes.MOVIE_ADDED_ERROR,
+		type: movieActionTypes.SEARCH_ERROR,
 		error,
 	};
 }
