@@ -2,10 +2,11 @@ import createReducer from '../util/create-reducer';
 import { movieActions } from '../actions';
 
 const initialState = {
-    items: [],
+    library: [],
+    formError: false,
 };
 
-export function movies(state = initialState, action={}) {
+export function library(state = initialState, action={}) {
     return createReducer(state, action, {
 
     });
