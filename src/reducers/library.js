@@ -25,6 +25,16 @@ export function library(state = initialState, action={}) {
     		return {
     			...state,
     			titles: Search,
+    			formError: false,
+    		};
+    	},
+
+    	[movieActionTypes.SEARCH_ERROR](state, action) {
+    		return {
+    			...state,
+    			titles: [],
+    			searchString: '',
+    			formError: true,
     		};
     	},
     });

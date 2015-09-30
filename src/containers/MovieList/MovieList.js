@@ -41,6 +41,7 @@ export default class MovieList extends Component {
                         <div className="col-sm-6 col-ls-6">
                             <Search 
                                 submitSearch={this.actions.submitSearch}
+                                formError={this.props.formError}
                             />
                             <TitleList 
                                 titles={this.props.titles}
